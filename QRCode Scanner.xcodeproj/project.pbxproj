@@ -17,6 +17,7 @@
 		25070B1D1831FE69005B5F38 /* VCCodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25070B1A1831FE69005B5F38 /* VCCodeScannerViewController.m */; };
 		25070B1E1831FE69005B5F38 /* VCCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25070B1C1831FE69005B5F38 /* VCCodeScannerView.m */; };
 		25070B201831FE8B005B5F38 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 25070B1F1831FE8B005B5F38 /* beep.mp3 */; };
+		25070B26183206A5005B5F38 /* UIDevice+iOS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 25070B25183206A5005B5F38 /* UIDevice+iOS7.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		25070B1B1831FE69005B5F38 /* VCCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCCodeScannerView.h; sourceTree = "<group>"; };
 		25070B1C1831FE69005B5F38 /* VCCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCCodeScannerView.m; sourceTree = "<group>"; };
 		25070B1F1831FE8B005B5F38 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		25070B24183206A5005B5F38 /* UIDevice+iOS7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+iOS7.h"; sourceTree = "<group>"; };
+		25070B25183206A5005B5F38 /* UIDevice+iOS7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+iOS7.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 			children = (
 				25070AF91831FE27005B5F38 /* AppDelegate.h */,
 				25070AFA1831FE27005B5F38 /* AppDelegate.m */,
+				25070B24183206A5005B5F38 /* UIDevice+iOS7.h */,
+				25070B25183206A5005B5F38 /* UIDevice+iOS7.m */,
 				25070B191831FE69005B5F38 /* VCCodeScannerViewController.h */,
 				25070B1A1831FE69005B5F38 /* VCCodeScannerViewController.m */,
 				25070B1B1831FE69005B5F38 /* VCCodeScannerView.h */,
@@ -173,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25070B1D1831FE69005B5F38 /* VCCodeScannerViewController.m in Sources */,
+				25070B26183206A5005B5F38 /* UIDevice+iOS7.m in Sources */,
 				25070AFB1831FE27005B5F38 /* AppDelegate.m in Sources */,
 				25070AF71831FE27005B5F38 /* main.m in Sources */,
 				25070B1E1831FE69005B5F38 /* VCCodeScannerView.m in Sources */,
@@ -310,6 +316,7 @@
 				25070B151831FE27005B5F38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
