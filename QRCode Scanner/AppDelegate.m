@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "VCCodeScannerViewController.h"
 
+@interface AppDelegate ()
+@property (nonatomic, strong) VCCodeScannerViewController *codeScannerViewController;
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,12 +21,22 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    VCCodeScannerViewController *codeScannerViewController = [[VCCodeScannerViewController alloc] init];
-    codeScannerViewController.title = NSLocalizedString(@"Please scan your code", @"Please scan your code");
-    [codeScannerViewController setCompletionBlock:^(NSString *resultString){
-        
+    self.codeScannerViewController = [[VCCodeScannerViewController alloc] init];
+    __weak VCCodeScannerViewController *weakScanVC = self.codeScannerViewController;
+    self.codeScannerViewController.title = NSLocalizedString(@"Please scan your code", @"Please scan your code");
+    [self.codeScannerViewController setCompletionBlock:^(NSString *resultString){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Scan result" message:resultString];
+        [alert setCancelButtonWithTitle:@"OK" handler:^{
+            [weakScanVC restartScanner];
+        }];
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:resultString]]) {
+            [alert addButtonWithTitle:@"Open" handler:^{
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:resultString]];
+            }];
+        }
+        [alert show];
     }];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:codeScannerViewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.codeScannerViewController];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -36,13 +50,14 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self.codeScannerViewController restartScanner];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
