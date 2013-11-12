@@ -1,14 +1,14 @@
 QRCode Scanner
 ==============
 
-A simple QRCode scanner based on [ZBar iPhone SDK](http://zbar.sourceforge.net/iphone/sdkdoc/) and AVFoundation. Tested on iOS 6 and iOS 7. Maybe work on iOS 5 too.
+A simple and sluppy QRCode, barcode scanner based on [ZBar iPhone SDK](http://zbar.sourceforge.net/iphone/sdkdoc/) and AVFoundation. Tested on iOS 6 and iOS 7. Maybe work on iOS 5 too.
 
-Before you run the sample app
------------------------------
+Before you run
+--------------
 
 **Note: You must run the sample app on device.**
 
-1. Install CocoaPods
+1. Install Ruby and CocoaPods
 2. Run `pod install`
 3. Run on a device with *QRCode Scanner.xcworkspace*
 
