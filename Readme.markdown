@@ -6,11 +6,11 @@ A simple QRCode scanner based on [ZBar iPhone SDK](http://zbar.sourceforge.net/i
 Before you run the sample app
 -----------------------------
 
-*Note: You need a run the sample app on device.*
+**Note: You must run the sample app on device.**
 
-1 Install CocoaPods
-2 Run `pod install`
-3 Run on a device with QRCode Scanner.xcworkspace
+1. Install CocoaPods
+2. Run `pod install`
+3. Run on a device with *QRCode Scanner.xcworkspace*
 
 Credit
 ------

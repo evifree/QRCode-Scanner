@@ -11,6 +11,7 @@
 #import "UIDevice+iOS7.h"
 #import <ZBarSDK/ZBarSDK.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface VCCodeScannerViewController () <VCCodeScanViewDelegate>
 @property (nonatomic, strong) UIView *captureParentView;
