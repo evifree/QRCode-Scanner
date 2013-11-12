@@ -27,7 +27,9 @@
     [self.codeScannerViewController setCompletionBlock:^(NSString *resultString){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Scan result" message:resultString];
         [alert setCancelButtonWithTitle:@"OK" handler:^{
-            [weakScanVC restartScanner];
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [weakScanVC restartScanner];
+            });
         }];
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:resultString]]) {
             [alert addButtonWithTitle:@"Open" handler:^{
